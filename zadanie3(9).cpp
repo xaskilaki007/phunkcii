@@ -5,31 +5,23 @@
 целыми N1, N2, N3.
 */
 #include <iostream>
-#include <cmath>
 using namespace std;
-float Leng(float xA, float yA, float xB, float yB)
+float Calc(float a, float b, int Op)
 {
-    return sqrt((xA-xB)*(xA-xB) + (yA-yB)*(yA-yB));
+    if (Op == 1) return a - b;
+    if (Op == 2) return a * b;
+    if (Op == 3) return a / b;
+    return a + b;
 }
-
 int main()
 {
-
-    float xA, xB, xC, xD, yA, yB, yC, yD;
+    float a, b;
+    int Op;
     
-    
-    cout << "Vvedite koordinaty tochki A:\n";
-    cin >> xA >> yA;
-    cout << "Vvedite koordinaty tochki B:\n";
-    cin >> xB >> yB;
-    cout << "Vvedite koordinaty tochki C:\n";
-    cin >> xC >> yC;
-    cout << "Vvedite koordinaty tochki D:\n";
-    cin >> xD >> yD;
-    
-    cout << "AB = " << Leng(xA,yA,xB,yB) << endl;
-    cout << "AC = " << Leng(xA,yA,xC,yC) << endl;
-    cout << "AD = " << Leng(xA,yA,xD,yD) << endl;
-    cout << "CD = " << Leng(xC,yC,xD,yD) << endl;
+    cout << "Vvedite chisla a i b:\n";
+    cin >> a >> b;
+    cout << "Vvedite nomer operacii:\n1 -\n2 *\n3 /\nOstalnoe +:\n";
+    cin >> Op;
+    cout << Calc(a,b,Op) << endl;
     return 0;
 }
