@@ -5,33 +5,31 @@
 целыми N1, N2, N3.
 */
 #include <iostream>
+#include <cmath>
 using namespace std;
-void func(int a,int b)
+float Leng(float xA, float yA, float xB, float yB)
 {
-    if (a > b)
-    {
-        std::cout << "a > b" << std::endl;
-    }
-    if (a < b)
-    {
-        std::cout << "a < b" << std::endl;
-    }
-    if (a == b)
-    {
-        std::cout << "a = b" << std::endl;
-    }
+    return sqrt((xA-xB)*(xA-xB) + (yA-yB)*(yA-yB));
 }
-int max2(int a, int b)
-{
-    if (a > b) return a;
-    else return b;
-}
+
 int main()
 {
-    int a, b,c,d;
+
+    float xA, xB, xC, xD, yA, yB, yC, yD;
     
-    std::cin >> a >> b >> c >> d;
     
-    cout << max2(max2(a,b),max2(c,d)) << endl;
+    cout << "Vvedite koordinaty tochki A:\n";
+    cin >> xA >> yA;
+    cout << "Vvedite koordinaty tochki B:\n";
+    cin >> xB >> yB;
+    cout << "Vvedite koordinaty tochki C:\n";
+    cin >> xC >> yC;
+    cout << "Vvedite koordinaty tochki D:\n";
+    cin >> xD >> yD;
+    
+    cout << "AB = " << Leng(xA,yA,xB,yB) << endl;
+    cout << "AC = " << Leng(xA,yA,xC,yC) << endl;
+    cout << "AD = " << Leng(xA,yA,xD,yD) << endl;
+    cout << "CD = " << Leng(xC,yC,xD,yD) << endl;
     return 0;
 }
